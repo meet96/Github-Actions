@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - test-branch # replace with your branch name
+  workflow_dispatch:
 
 jobs:
   build:
