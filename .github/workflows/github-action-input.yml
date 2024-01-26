@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       myInput:
-        description: 'Enter a value' # description of the input
+        description: "Enter a value" # description of the input
         required: true # whether the input is required or not
-        default: 'This is test message from Meet' # default value of the input
+        default: "This is test message from Meet" # default value of the input
 
 jobs:
   build:
@@ -22,4 +22,4 @@ jobs:
         run: echo "🍏 This job's status is ${{ job.status }}."
 
       - name: Display input
-        run: echo "Input: ${{ github.event.inputs.myInput }}"
+        run: echo ${{ 'github.event.inputs.myInput' }}"
