@@ -1,4 +1,4 @@
-name: My Workflow
+name: Github-action-input
 
 on:
   push:
@@ -22,4 +22,4 @@ jobs:
         run: echo "🍏 This job's status is ${{ job.status }}."
 
       - name: Display input
-        run: echo ${{ 'github.event.inputs.myInput' }}"
+        run: echo ${{ github.event.inputs.myInput }}"
