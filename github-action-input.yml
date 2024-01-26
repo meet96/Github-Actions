@@ -1,0 +1,25 @@
+name: My Workflow
+
+on:
+  push:
+    branches:
+      - test-branch # replace with your branch name
+  workflow_dispatch:
+    inputs:
+      myInput:
+        description: 'Enter a value' # description of the input
+        required: true # whether the input is required or not
+        default: 'This is test message from Meet' # default value of the input
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run a one-line script
+        run: echo "🍏 This job's status is ${{ job.status }}."
+
+      - name: Display input
+        run: echo "Input: ${{ github.event.inputs.myInput }}"
