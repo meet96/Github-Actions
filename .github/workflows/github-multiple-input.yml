@@ -1,0 +1,27 @@
+name: My Workflow
+on:
+  workflow_dispatch:
+    inputs:
+      firstInput:
+        description: "First input"
+        required: true
+
+jobs:
+  firstJob:
+    runs-on: ubuntu-latest
+    outputs:
+      secondInput: ${{ steps.process.outputs.secondInput }}
+    steps:
+      - name: Process first input
+        id: process
+        run: |
+          # Process the first input and set the second input
+          echo "::set-output name=secondInput::processed-${{ github.event.inputs.firstInput }}"
+
+  secondJob:
+    needs: firstJob
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use second input
+        run: |
+          echo "Second input: ${{ needs.firstJob.outputs.secondInput }}"
