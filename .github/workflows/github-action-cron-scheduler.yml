@@ -1,8 +1,8 @@
-name: Scheule Workflow
+name: Schedule Workflow
 
 on:
   schedule:
-    - cron: "* * * * *" # Runs every minute
+    - cron: "*/5 * * * *" # Runs every 5 minutes
 
 jobs:
   build:
