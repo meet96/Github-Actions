@@ -1,4 +1,4 @@
-name: My Workflow
+name: Github-Multiple-Input
 on:
   workflow_dispatch:
     inputs:
