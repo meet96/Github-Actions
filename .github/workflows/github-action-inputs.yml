@@ -4,12 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       input1:
-        description: 'Description for input1'
+        description: "Description for input1"
         required: true
       input2:
-        description: 'Description for input2'
+        description: "Description for input2"
         required: false
-        default: 'default value for input2'
+        default: "default value for input2"
 
 jobs:
   print-inputs:
@@ -22,7 +22,7 @@ jobs:
           echo "Input2: ${{ github.event.inputs.input2 }}"
 
   call-workflow:
-    uses: organization/repository/.github/workflows/reusable-workflow.yml@main
+    uses: meet96/workflow-core/.github/workflows/workflow-core-inputs.yml@main
     with:
       input1: ${{ github.event.inputs.input1 }}
       input2: ${{ github.event.inputs.input2 }}
